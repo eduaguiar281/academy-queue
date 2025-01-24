@@ -12,7 +12,7 @@ import software.amazon.awssdk.services.sqs.model.ReceiveMessageRequest
 suspend fun main() {
     while(true){
         println("Iniciando leitura da fila")
-        receiveSerializedPersonsFromQueue("https://sqs.us-east-2.amazonaws.com/337381194561/arcoacademy.fifo")
+        receiveSerializedPersonsFromQueue("https://sqs.us-east-2.amazonaws.com/337381194561/arcoacademy2.fifo")
             .collect { mensagem ->
                 // Faça algo com a pessoa recebida da fila
                 println("Mensagem enviada por ${mensagem.nomeRemetente}. Mensagem:${mensagem.mensagem} as ${mensagem.dataHoraMensagem}")
