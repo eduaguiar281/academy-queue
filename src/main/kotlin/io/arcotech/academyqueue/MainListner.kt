@@ -25,7 +25,7 @@ suspend fun main() {
 inline fun <reified T> ObjectMapper.readValue(json: String)  = this.readValue(json, T::class.java)
 
 fun receiveSerializedPersonsFromQueue(queueUrl: String): Flow<Mensagem> = flow {
-    var sqsClient: SqsAsyncClient
+    val sqsClient = SqsAsyncClient.builder().build()
     val objectMapper = ObjectMapper()
 
     while (true) {
