@@ -18,4 +18,6 @@ data class Mensagem(
     @JsonSerialize(using = LocalDateTimeSerializer::class)
     @JsonDeserialize(using = LocalDateTimeDeserializer::class)
     val dataHoraMensagem: LocalDateTime = LocalDateTime.now()
+    @JsonProperty("indexValue")
+    val indexValue: Long? = null
 )

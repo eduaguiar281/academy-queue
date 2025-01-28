@@ -11,7 +11,7 @@ import kotlin.coroutines.suspendCoroutine
 
 suspend fun main() {
     while(true){
-        val mensagem = Mensagem()
+        val mensagem = Mensagem(indexValue: 15541)
         println(mensagem)
         sendSerializedPersonToQueue("https://sqs.us-east-2.amazonaws.com/337381194561/arcoacademy.fifo", mensagem)
         Thread.sleep(2000L)
